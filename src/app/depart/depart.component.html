@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+    <h1>New Department</h1>
+  <div class="mb-3">
+      <label for="exampleFormControlInput1"  class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="txtName"  placeholder="Type Dept Name">
+      <span *ngIf="form.controls['txtName'].touched && form.hasError('required','txtName')">This Feild is required</span>
+    </div>
+    <div class="mb-3">
+      <input type="button"  class="btn btn-primary"  value="Save" (click)="Save()">
+    </div>
+  </form>

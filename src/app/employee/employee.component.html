@@ -1,0 +1,70 @@
+<form [formGroup]="form" enctype="multipart/form-data">
+    <h1>New Employee</h1>
+
+    <div class="row">
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1"  class="form-label">First Name</label>
+          <input type="text" class="form-control" formControlName="txtFName"  placeholder="Type First Name">
+          <span *ngIf="form.controls['txtFName'].touched && form.hasError('required','txtFName')">This Feild is required</span>
+        </div>
+        </div>
+        <div class="col-6">
+         <div class="mb-3">
+          <label for="exampleFormControlInput1"  class="form-label">Last Name</label>
+          <input type="text" class="form-control" formControlName="txtLName"  placeholder="Type Last Name">
+          <span *ngIf="form.controls['txtLName'].touched && form.hasError('required','txtLName')">This Feild is required</span>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1"  class="form-label">Phone</label>
+          <input type="text" class="form-control" formControlName="txtPhone"  placeholder="Type Last Name">
+          <span *ngIf="form.controls['txtPhone'].touched && form.hasError('required','txtPhone')">This Feild is required</span>
+        </div>
+        </div>
+        <div class="col-6">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1"  class="form-label">BOD</label>
+          <input type="date" class="form-control" formControlName="txtBod"  >
+          <span *ngIf="form.controls['txtBod'].touched && form.hasError('required','txtBod')">This Feild is required</span>
+        </div>
+      </div>
+      <div class="col-6">
+        
+        <div class="mb-3">
+          <label for="exampleFormControlInput1"   class="form-label">Country</label>
+          <select class="form-select" formControlName="country_id" (change)="OnChange()"  aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option *ngFor="let items of listcountrydto" value="{{items.id}}">{{items.name}}</option>
+            </select>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1"  class="form-label">City</label>
+          <select class="form-select" formControlName="city_id"  aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option *ngFor="let itemsCity of listcityydto" value="{{itemsCity.id}}">{{itemsCity.name}}</option>
+            </select>
+        </div>
+      </div>
+      <div class="col-6"> 
+        <div class="mb-3">
+          <label for="exampleFormControlInput1"  class="form-label">Department</label>
+          <select class="form-control" formControlName="dept_id"  aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option *ngFor="let item of listDept" value="{{item.id}}">{{item.name}}</option>
+            </select>
+        </div>
+      </div>
+   
+      <div class="mb-3">
+        <input type="file" formControlName="formPic">
+      </div> 
+      <div class="mb-3">
+        <input type="button"  class="btn btn-primary"  value="{{nameButton}}" (click)="Save()" >
+      </div>  
+     
+    </div>
+  </form>

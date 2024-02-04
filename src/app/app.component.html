@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/NewEmployee">New Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/NewDepart">New Department</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/NewCountry">New Country</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/NewCity">New City</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ListCountry">List Country</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ListCity">List City</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ListDept">List Deptrament</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ListEmp">List Employees</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

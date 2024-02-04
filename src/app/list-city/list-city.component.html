@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+<div class="mb-3">
+<select class="form-select" formControlName="country_id"  aria-label="Default select example" (change)="OnChange()">
+    <option selected>Open this select menu</option>
+    <option *ngFor="let item of listCountry" value="{{item.id}}">{{item.name}}</option>
+  </select>
+</div>
+
+<table class="table table-hover">
+    <thead>
+     <th>
+        City Name 
+     </th>
+    </thead>
+    <tbody>
+     <tr *ngFor="let item of listCity">
+         <td>
+             {{item.name}}
+         </td>
+     </tr>
+    </tbody>
+   </table>
+
+</form>
+ 
